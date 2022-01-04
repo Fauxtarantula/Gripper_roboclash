@@ -1,7 +1,6 @@
 #Gripper code
 
-servo control done with flex config. 
-Accel have bnot been configured
+
 
 
 I2C address of accelerometer is 0x53
