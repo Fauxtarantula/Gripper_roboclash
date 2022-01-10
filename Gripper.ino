@@ -2,7 +2,7 @@
 #include<Wire.h>
 
 Servo gripper;
-Servo arm;
+Servo arm, arm2;
 int16_t Xout, Yout, Zout;
 
 int ADXL345 = 0x53; //I2C address of accelerometer. Think of it as the ECS practical to set addres for keypad etc.
@@ -24,6 +24,7 @@ void setup() {
   //pin attach
   gripper.attach(5); //5 is pwm
   arm.attach(10);
+  arm2.attach(7);
 
   //pin assignment role
   pinMode(A0,INPUT); //set pinmode to read in analog data 0 to 1024 or 10 bits
@@ -61,5 +62,6 @@ void arm_movement(double n){
   int a;
   a=(int)n;
   arm.write(a);
+  arm2.write(a);
   //Serial.println(n);
 }
